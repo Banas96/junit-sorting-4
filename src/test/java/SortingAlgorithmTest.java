@@ -72,6 +72,7 @@ public class SortingAlgorithmTest {
         for (int i = 0; i < toSort.length; i++) {
 
 
+
             Assert.assertEquals("Blad przy sortowaniu na pozycji: "+ i,
                     posortowana[i],toSort[i],0.01);
 
