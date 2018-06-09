@@ -3,6 +3,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Random;
+
 public class SortingAlgorithmTest {
 
     private SortingAlgorithms algorytm;
@@ -45,5 +47,47 @@ public class SortingAlgorithmTest {
             }
             System.out.println("Test2 zaliczony");
     }
+
+    @Test
+    public void testSortowaniaTysiac() throws Exception {
+
+        boolean asc = true;
+        Random generator = new Random();
+        double[] toSort = new double[1000];
+
+        //LOSOWANIE KAZDEGO ELEMENTU TABLICY
+        for(int i = 0; i < toSort.length; i++) {
+            toSort[i] = (Math.random() * 100) + 1;
+        }
+        //WYWOLANIE FUNKCJI
+        algorytm.sort(toSort, asc);
+
+        for(int i = 0; i< toSort.length - 1; i++) {
+                Assert.assertTrue(toSort[i] < toSort[i+1]);
+        }
+    }
+    @Test(timeout = 100)
+    public void testNaStoMiliSekund () throws Exception {
+
+        boolean asc = true;
+        Random generator = new Random();
+        double[] toSort = new double[10000];
+
+        //LOSOWANIE KAZDEGO ELEMENTU TABLICY
+        for(int i = 0; i < toSort.length; i++) {
+            toSort[i] = (Math.random() * 100) + 1;
+        }
+        //WYWOLANIE FUNKCJI
+        algorytm.sort(toSort, asc);
+        long start = System.currentTimeMillis();
+
+        for(int i = 0; i < toSort.length - 1; i++) {
+            Assert.assertTrue("Test zakonczony na ideksie: " + i,toSort[i] < toSort[i+1]);
+        }
+
+
+
+    }
+
 }
 
