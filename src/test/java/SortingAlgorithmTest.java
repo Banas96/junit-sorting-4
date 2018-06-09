@@ -45,5 +45,21 @@ public class SortingAlgorithmTest {
             }
             System.out.println("Test2 zaliczony");
     }
+    @Test
+    public void testSortowania1000Rosnaco() throws Exception{
+        double[] randomArray = new double [1000];
+        boolean asc = true;
+        for(int i = 0; i < randomArray.length; i++) {
+            randomArray[i] = Math.random();
+        algorytm.sort(randomArray,asc);
+        for (int temp=0; temp<randomArray.length-1; temp++){
+            Assert.assertTrue(randomArray[temp]<=randomArray[temp+1]);
+        }
+
+
+        }
+
+
+    }
 }
 
