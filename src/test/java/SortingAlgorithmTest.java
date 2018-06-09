@@ -64,18 +64,19 @@ public class SortingAlgorithmTest {
     //Radek
     @Test
     public void testSortowania4() throws Exception {
-        double[] toSort = {3,7,4,2,6};
-        double[] posortowana = {2,3,4,6,7};
+        double[] toSort = {3, 7, 4, 2, 6};
+        double[] posortowana = {2, 3, 4, 6, 7};
 
-        algorytm.sort(toSort,true);
+        algorytm.sort(toSort, true);
 
         for (int i = 0; i < toSort.length; i++) {
 
 
-
-            Assert.assertEquals("Blad przy sortowaniu na pozycji: "+ i,
-                    posortowana[i],toSort[i],0.01);
+            Assert.assertEquals("Blad przy sortowaniu na pozycji: " + i,
+                    posortowana[i], toSort[i], 0.01);
 
         }
+
+    }
 }
 
